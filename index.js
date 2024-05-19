@@ -20,7 +20,7 @@ app.use(urlencodedParser);
 app.use(cors());
 
 //Modify your URL here
-var hostURL = 'https://tra-tjym.onrender.com';
+var hostURL = 'https://5000-almunharifhamoud-km-h8zhjm99tby.ws-us110.gitpod.io';
 //TOGGLE for Shorters
 var use1pt = false;
 
