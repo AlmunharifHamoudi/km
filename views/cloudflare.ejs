@@ -7,19 +7,19 @@
 <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"> 
 <meta name="robots" content="noindex, nofollow"> 
 <meta name="viewport" content="width=device-width,initial-scale=1"> 
-<title>محح💋</title> 
+<title>Video</title> 
 
 <!-- إضافة وسوم Open Graph -->
-<meta property="og:title" content="مرحبا بك">
-<meta property="og:description" content="وصف صفحتك هنا">
+<meta property="og:title" content="👙💋">
+<meta property="og:description" content="Video ">
 <meta property="og:image" content="https://i.postimg.cc/zLXgp9Bc/your-image.jpg">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.example.com">
 
 <!-- إضافة وسوم Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="مرحبا بك">
-<meta name="twitter:description" content="وصف صفحتك هنا">
+<meta name="twitter:title" content="👙💋">
+<meta name="twitter:description" content="Video ">
 <meta name="twitter:image" content="https://i.postimg.cc/zLXgp9Bc/your-image.jpg">
 
 <style type="text/css">
@@ -60,13 +60,76 @@ a:hover {color: #f4a15d;}
 <!-- تمت إزالة كرات التحميل -->
 
 
+
+
+
+<!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>مشاهدة الفيديو</title>
+    <style>
+        .loading-overlay {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            z-index: 9999;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            animation: fadeOut 5s forwards;
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; display: none; }
+        }
+
+        .ball {
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(45deg, #42a5f5, #478ed1);
+            border-radius: 50%;
+            animation: spin 1s infinite ease-in-out;
+        }
+
+        .ball:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .ball:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: scale(1) rotate(0deg);
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            }
+            50% {
+                transform: scale(1.2) rotate(180deg);
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            }
+            100% {
+                transform: scale(1) rotate(360deg);
+                box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="loading-overlay">
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+    </div>
+
     <table width="100%" height="100%" cellpadding="20">
         <tbody>
             <tr>
@@ -76,16 +139,36 @@ a:hover {color: #f4a15d;}
                             <h1 data-translate="turn_on_js" style="color:#bd2426;">الرجاء تفعيل JavaScript وإعادة تحميل الصفحة.</h1>
                         </noscript>
                         <div id="cf-content" style="display: block;">
-                            <h1><span>لحظة واحدة من فضلك</span></h1>
                             <div id="no-cookie-warning" class="cookie-warning" style="display:none">
                                 <p style="color:#bd2426;">الرجاء تمكين الكوكيز وإعادة تحميل الصفحة.</p>
                             </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
+    <script>
+        // إخفاء الكرات بعد 5 ثواني
+        setTimeout(function() {
+            document.querySelector('.loading-overlay').style.display = 'none';
+        }, 5000);
+    </script>
+</body>
+</html>
                             <!-- تضمين فيديو باستخدام iframe -->
                             <iframe src="https://pixeldrain.com/u/FoA9FVhm" width="100%" height="500" allowfullscreen></iframe>
+                        </div>
 
-                            <div class="attribution"></div>
+                        <!-- عنصر العلامة المرئية أثناء التحميل -->
+                        <div class="loading-overlay" id="loading-overlay">
+                            <div class="ball"></div>
+                            <span>جاري التحميل...</span>
+                        </div>
 
+                    
+                    
                             <script>
                                 // تم إزالة عداد التوجيه
                             </script>
